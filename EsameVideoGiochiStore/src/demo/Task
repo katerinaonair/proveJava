@@ -1,0 +1,25 @@
+Si vuole realizzare un sistema software per la gestione automatizzata di uno store online di videogiochi che tiene traccia dei progressi del giocatore e che in base alle ore di gioco offre dei crediti per l’acquisto di nuovi giochi. A tal fine si realizzino classi per la rappresentazione di:
+1) Videogiochi. I videogiochi sono caratterizzati da: un codice identificativo alfanumerico, il nome del videogioco, la software house che lo ha prodotto, la categoria (che può essere: SPARATUTTO, PICCHIADURO, RACING, MANAGERIALE, ARCADE, AVVENTURA), il prezzo e l’età minima per giocarci (3+, 6+, 14+, 18+).
+2) Giocatore. Per ogni giocatore è necessario memorizzare un nickname (univoco), il numero di ore di gioco sulla piattaforma (all’inizio è 0), il livello giocatore nella community (all’inizio è 1) ed il credito con il quale il giocatore può acquistare i videogiochi.
+3) GameStore. La piattaforma di vendita videogiochi, oltre ad avere un nome stabilito in fase di creazione memorizza le informazioni relative ai giocatori ed ai videogiochi da essi acquistati. Inoltre, consente di effettuare le seguenti operazioni:
+a. Aggiungere un nuovo giocatore a sistema se non è già presente;
+b. Aggiungere un videogioco alla libreria dei giochi di un particolare giocatore scalando il
+prezzo dal credito dell’utente se ha credito sufficiente;
+c. Aggiungere credito ad un utente (il credito non può essere negativo);
+d. Aumentare le ore di gioco di un utente ed aggiornarne automaticamente il livello nella
+community secondo la funzione radice quadrata. (A quattro ore di gioco il livello sale a 2,
+a nove ore diventa 3, a sedici ore diventa 4, a venticinque ore diventa 5, e così via);
+e. Ciclare tramite un iteratore su tutti i giocatori ordinati per livello decrescente.
+Utilizzare le eccezioni dove ritenuto opportuno nel caso in cui alcune operazioni non siano eseguibili.
+Si realizzi dunque una classe Test, contenente il metodo main che:
+• Crea 5 videogiochi a piacere con un prezzo compreso tra 5 e 70 Euro.
+• Crea 50 giocatori indicando solamente il nickname (generato univocamente) ed il credito
+generato casualmente come numero tra 10 e 100 Euro e li aggiunge allo Store.
+• Per ogni giocatore creato in precedenza:
+1. Estrae un numero n tra 0 e 5 e fa acquistare a quell’utente i primi n videogiochi creati all’inizio, a patto che abbia credito sufficiente.
+2. Aumenta le sue ore di gioco con un numero casuale tra 0 e 300.
+• Stampa a video tramite for-each tutti i giocatori ordinati per livello decrescente (Devono essere
+visibili: nickname, ore di gioco e livello).
+• Scrive sul file “giocatori.csv” i 50 giocatori accompagnati dalla lista di giochi acquistati secondo il
+seguente formato:
+     Nickname,Credito,[Videogioco1,Videogioco2,...,VideogiocoN]
